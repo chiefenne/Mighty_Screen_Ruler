@@ -35,7 +35,7 @@ Mighty Screen Ruler is a transparent on-screen ruler which stays on top of other
 - Metric and imperial units
 - Pivot-based rotation with fine and fast keyboard increments
 - Keyboard resizing with configurable increments
-- Window-position and current-angle annotation
+- Pivot screen-position and current-angle annotation
 - Highly configurable through a JSON config file
 - Triangle edge angle scales with optional secondary inner scale
 - Triangle origin guide lines
