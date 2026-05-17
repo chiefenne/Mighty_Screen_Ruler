@@ -1,0 +1,2 @@
+Nuitka
+PySide6-Essentials
