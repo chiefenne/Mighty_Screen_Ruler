@@ -1,6 +1,6 @@
 # Mighty Screen Ruler
 
-Mighty Screen Ruler is a transparent on-screen ruler which stays on top of othe windows. It provides a rectangular ruler and a triangular drafting ruler with metric and imperial scales, keyboard control, pivot-based rotation, configurable sizing, and angle annotations.
+Mighty Screen Ruler is a transparent on-screen ruler which stays on top of other windows. It provides a rectangular ruler and a triangular drafting ruler with metric and imperial scales, keyboard control, pivot-based rotation, configurable sizing, and angle annotations.
 
 ## Features
 
@@ -14,20 +14,53 @@ Mighty Screen Ruler is a transparent on-screen ruler which stays on top of othe 
 - Triangle edge angle scales with optional secondary inner scale
 - Triangle origin guide lines
 
-## Requirements
+## Releases
 
-- Python 3.12 or newer
-- PySide6
+The `release/` folder is the deployment folder. Each OS folder should contain one ZIP file.
 
-Install the dependency:
+### macOS
+
+Use:
+
+`release/macos/Mighty_Screen_Ruler-macos-x86_64.zip`
+
+Unzip it and open `Mighty_Screen_Ruler.app`.
+
+The macOS app is unsigned. If macOS says Apple cannot verify the app, use one of these workarounds after unzipping:
+
+1. Open `System Settings` -> `Privacy & Security`, then choose `Open Anyway` for `Mighty_Screen_Ruler.app`. You may need to try opening the app once or twice before the button appears.
+2. Or remove the download quarantine flag in Terminal:
 
 ```bash
-python3 -m pip install PySide6
+xattr -dr com.apple.quarantine /path/to/Mighty_Screen_Ruler.app
+open /path/to/Mighty_Screen_Ruler.app
 ```
 
-## Run
+### Windows
+
+Not available yet. Planned release file:
+
+`release/windows/Mighty_Screen_Ruler-windows-x86_64.zip`
+
+### Linux
+
+Not available yet. Planned release file:
+
+`release/linux/Mighty_Screen_Ruler-linux-x86_64.zip`
+
+## Run From Source
+
+Requirements:
+
+- Python 3.12 or newer
+- PySide6-Essentials
+
+`requirements.txt` also includes Nuitka for building release ZIPs.
+
+From the repository root:
 
 ```bash
+python3 -m pip install -r requirements.txt
 python3 Mighty_Screen_Ruler.py
 ```
 
