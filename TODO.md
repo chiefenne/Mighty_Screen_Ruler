@@ -55,3 +55,24 @@ Open questions:
 - Should the user-defined scale be temporary only, or saved as named presets?
 - Should it apply to both ruler shapes immediately?
 - Should the two reference points remain visible as an overlay while the custom scale is active?
+
+### MSR-003: App Logo And Platform Icons
+
+Status: Open
+
+Create a proper logo and platform icon set for Mighty Screen Ruler.
+
+The app currently builds without a custom icon, which leaves the macOS dock, Finder, app switcher, and release bundle without a distinct visual identity. The logo should work at small sizes and still read as a screen/ruler utility.
+
+Acceptance notes:
+
+- Design a recognizable app logo.
+- Produce a macOS `.icns` icon for the app bundle and dock.
+- Add the icon to the Nuitka macOS build command.
+- Prepare source artwork in an editable format.
+- Consider future Windows `.ico` and Linux PNG/SVG variants.
+
+Open questions:
+
+- Should the logo be a literal ruler, a pixel/grid motif, or a combination?
+- Should the icon use the rectangular ruler, triangular ruler, or both?
