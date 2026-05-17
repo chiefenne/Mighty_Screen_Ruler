@@ -1,20 +1,18 @@
 # Mighty Screen Ruler
 
-Mighty Screen Ruler is a transparent on-screen ruler for macOS-style desktop workflows. It provides a rectangular ruler and a triangular drafting ruler with metric and imperial scales, keyboard control, pivot-based rotation, configurable sizing, and angle annotations.
-
-by chiefenne
+Mighty Screen Ruler is a transparent on-screen ruler which stays on top of othe windows. It provides a rectangular ruler and a triangular drafting ruler with metric and imperial scales, keyboard control, pivot-based rotation, configurable sizing, and angle annotations.
 
 ## Features
 
+- Always-on-top ruler
 - Rectangular and triangular ruler modes
 - Metric and imperial units
 - Pivot-based rotation with fine and fast keyboard increments
 - Keyboard resizing with configurable increments
 - Window-position and current-angle annotation
-- Configurable branding
+- Highly configurable through a JSON config file
 - Triangle edge angle scales with optional secondary inner scale
 - Triangle origin guide lines
-- Always-on-top ruler windows
 
 ## Requirements
 
@@ -51,4 +49,3 @@ Most behavior can be adjusted in `ruler_config.json`, including:
 ## License
 
 MIT License. See `LICENSE`.
-
