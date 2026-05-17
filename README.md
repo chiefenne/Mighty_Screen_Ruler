@@ -40,6 +40,8 @@ Mighty Screen Ruler is a transparent on-screen ruler which stays on top of other
 - Triangle edge angle scales with optional secondary inner scale
 - Triangle origin guide lines
 
+Future enhancement ideas are tracked in `TODO.md`.
+
 ## Usage
 
 Drag the ruler to move it. Hold `Shift` while dragging to rotate around the current pivot point. Press `H` in the app to open the help popup.
