@@ -40,6 +40,38 @@ Mighty Screen Ruler is a transparent on-screen ruler which stays on top of other
 - Triangle edge angle scales with optional secondary inner scale
 - Triangle origin guide lines
 
+## Usage
+
+Drag the ruler to move it. Hold `Shift` while dragging to rotate around the current pivot point. Press `H` in the app to open the help popup.
+
+<p align="center">
+  <img src="images/Mighty_Screen_Ruler_Help_Window.png" alt="Mighty Screen Ruler help popup showing mouse and keyboard shortcuts" width="520">
+  <br>
+  <em>Figure 5: Help popup with ruler controls</em>
+</p>
+
+### Keyboard Shortcuts
+
+| Shortcut | Action |
+| --- | --- |
+| `H` | Toggle help popup |
+| `Esc` | Quit |
+| `Space` | Switch between rectangular and triangular ruler |
+| `M` | Toggle metric / imperial units |
+| `Left` / `Right` | Fine rotate counter-clockwise / clockwise |
+| `Shift+Left` / `Shift+Right` | Fast rotate counter-clockwise / clockwise |
+| `Cmd+Arrow` / `Ctrl+Arrow` | Pan the ruler by 1 px |
+| `Shift+Cmd+Arrow` / `Shift+Ctrl+Arrow` | Pan the ruler by 10 px |
+| `Up` / `Down` | Increase / decrease opacity |
+| `I` / `D` | Increase / decrease ruler size |
+| `P` | Cycle pivot point |
+| `V` | Set a custom pivot value |
+| `R` | Reset angle |
+| `A` | Set angle |
+| `E` | Toggle triangle edge angle scale |
+| `N` | Toggle triangle inner angle scale |
+| `L` | Cycle triangle angle label mode |
+
 ## Releases
 
 The `release/` folder is the deployment folder. Each OS folder should contain one ZIP file.
@@ -89,8 +121,6 @@ From the repository root:
 python3 -m pip install -r requirements.txt
 python3 Mighty_Screen_Ruler.py
 ```
-
-Press `H` in the app to open the help popup.
 
 ## Configuration
 
