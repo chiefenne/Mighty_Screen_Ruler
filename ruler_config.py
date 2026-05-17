@@ -1,10 +1,26 @@
 import sys
 import json
 import os
+from copy import deepcopy
+from pathlib import Path
 from PySide6.QtCore import Qt
 
 # Detect OS for default key bindings
 IS_MAC = (sys.platform == 'darwin')
+APP_NAME = "Mighty Screen Ruler"
+APP_DIR_NAME = APP_NAME.replace(" ", "_")
+CONFIG_FILENAME = "ruler_config.json"
+
+
+def get_config_path():
+    if sys.platform == "darwin":
+        base_path = Path.home() / "Library" / "Preferences"
+    elif sys.platform == "win32":
+        base_path = Path(os.environ.get("APPDATA", Path.home() / "AppData" / "Roaming"))
+    else:
+        base_path = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
+
+    return base_path / APP_DIR_NAME / CONFIG_FILENAME
 
 DEFAULT_CONFIG = {
     "reset_on_switch": True,
@@ -98,14 +114,14 @@ DEFAULT_CONFIG = {
 
 class RulerConfig:
     def __init__(self):
-        self.file_path = "ruler_config.json"
-        self.data = DEFAULT_CONFIG.copy()
+        self.file_path = get_config_path()
+        self.data = deepcopy(DEFAULT_CONFIG)
         self.load()
 
     def load(self):
-        if os.path.exists(self.file_path):
+        if self.file_path.exists():
             try:
-                with open(self.file_path, 'r') as f:
+                with self.file_path.open('r', encoding='utf-8') as f:
                     loaded = json.load(f)
                     self._merge(self.data, loaded)
             except Exception as e:
@@ -115,7 +131,8 @@ class RulerConfig:
 
     def save(self):
         try:
-            with open(self.file_path, 'w') as f:
+            self.file_path.parent.mkdir(parents=True, exist_ok=True)
+            with self.file_path.open('w', encoding='utf-8') as f:
                 json.dump(self.data, f, indent=4)
         except Exception as e:
             print(f"Error saving config: {e}")
