@@ -1,0 +1,78 @@
+{
+    "reset_on_switch": true,
+    "calibration_factor": 1.0,
+    "initial_opacity": 0.9,
+    "units": "metric",
+    "size_increment": {
+        "metric_cm": 1.0,
+        "imperial_in": 0.5
+    },
+    "angle_increment": {
+        "fine_deg": 0.1,
+        "fast_deg": 1.0
+    },
+    "branding": {
+        "enabled": true,
+        "color": "#1e2832",
+        "brand": "Mighty Screen Ruler",
+        "byline": "by chiefenne"
+    },
+    "ruler_rect": {
+        "height_cm": 3.0,
+        "width_cm": 30.0,
+        "width_in": 12.0
+    },
+    "ruler_tri": {
+        "half_width_cm": 10.0,
+        "half_width_in": 5.0,
+        "scales": {
+            "horizontal": true,
+            "edge_angles": {
+                "enabled": true,
+                "label_mode": "dual_continuous",
+                "inner_enabled": true,
+                "inner_bar_enabled": true,
+                "inner_bar_color": "#ffe600",
+                "inner_bar_width_px": 12,
+                "inner_bar_offset_px": 38,
+                "inner_bar_label_padding_px": 4,
+                "inner_label_offset_px": 38,
+                "top_clearance_deg": 10
+            },
+            "origin_guides": {
+                "enabled": true,
+                "color": "#25333b",
+                "alpha": 120,
+                "width_px": 1.2,
+                "top_clearance_px": 82,
+                "edge_clearance_px": 10,
+                "outer_scale_clearance_px": 34,
+                "inner_scale_clearance_px": 24,
+                "bottom_outer_clearance_px": 58,
+                "bottom_inner_clearance_px": 34
+            }
+        }
+    },
+    "key_bindings": {
+        "quit": "Esc",
+        "toggle_units": "M",
+        "switch_ruler": "Space",
+        "cycle_pivot": "P",
+        "set_pivot_value": "V",
+        "reset_angle": "R",
+        "set_angle": "A",
+        "size_increase": "I",
+        "size_decrease": "D",
+        "toggle_tri_edge_angles": "E",
+        "toggle_tri_inner_angle_scale": "N",
+        "cycle_tri_angle_label_mode": "L",
+        "rotate_cw": "Right",
+        "rotate_ccw": "Left",
+        "opacity_up": "Up",
+        "opacity_down": "Down",
+        "pan_left": "Cmd+Left",
+        "pan_right": "Cmd+Right",
+        "pan_up": "Cmd+Up",
+        "pan_down": "Cmd+Down"
+    }
+}
