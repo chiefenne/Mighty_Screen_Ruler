@@ -28,14 +28,20 @@ python3 -m pip install PySide6
 ## Run
 
 ```bash
-python3 main.py
+python3 Mighty_Screen_Ruler.py
 ```
 
 Press `H` in the app to open the help popup.
 
 ## Configuration
 
-Most behavior can be adjusted in `ruler_config.json`, including:
+Most behavior can be adjusted in the per-user `ruler_config.json`, stored at:
+
+- macOS: `~/Library/Preferences/Mighty_Screen_Ruler/ruler_config.json`
+- Windows: `%APPDATA%\Mighty_Screen_Ruler\ruler_config.json`
+- Linux: `${XDG_CONFIG_HOME:-~/.config}/Mighty_Screen_Ruler/ruler_config.json`
+
+Configurable behavior includes:
 
 - default units
 - size increments
@@ -45,6 +51,8 @@ Most behavior can be adjusted in `ruler_config.json`, including:
 - triangle angle scales
 - triangle origin guide lines
 - keyboard bindings
+
+An example config is available at `examples/ruler_config.example.json`.
 
 ## License
 
