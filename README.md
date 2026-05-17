@@ -122,6 +122,18 @@ python3 -m pip install -r requirements.txt
 python3 Mighty_Screen_Ruler.py
 ```
 
+## Build macOS Release
+
+From the repository root:
+
+```bash
+scripts/build_macos.sh
+```
+
+The script uses the `ruler` conda environment, builds the app with Nuitka, stages `Mighty_Screen_Ruler.app`, and writes the release ZIP to:
+
+`release/macos/Mighty_Screen_Ruler-macos-x86_64.zip`
+
 ## Configuration
 
 Most behavior can be adjusted in the per-user `ruler_config.json`, stored at:
