@@ -4,20 +4,28 @@ Mighty Screen Ruler is a transparent on-screen ruler which stays on top of other
 
 ## Screenshots
 
-<p>
+<p align="center">
   <img src="images/Mighty_Screen_Ruler_rectangular_horizontal.png" alt="Rectangular ruler in horizontal orientation" width="720">
+  <br>
+  <em>Figure 1: Rectangular ruler in default orientation</em>
 </p>
 
-<p>
-  <img src="images/Mighty_Screen_Ruler_rectangular_rotated_20.png" alt="Rectangular ruler rotated about its pivot point" width="720">
+<p align="center">
+  <img src="images/Mighty_Screen_Ruler_rectangular_rotated_20.png" alt="Rectangular ruler rotated 20° about its pivot point" width="720">
+  <br>
+  <em>Figure 2: Rectangular ruler rotated about its pivot point</em>
 </p>
 
-<p>
+<p align="center">
   <img src="images/Mighty_Screen_Ruler_triangular_horizontal.png" alt="Triangular ruler in horizontal orientation" width="720">
+  <br>
+  <em>Figure 3: Triangular ruler in default orientation</em>
 </p>
 
-<p>
-  <img src="images/Mighty_Screen_Ruler_triangular_rotated_-30.png" alt="Triangular ruler rotated about its pivot point" width="720">
+<p align="center">
+  <img src="images/Mighty_Screen_Ruler_triangular_rotated_-30.png" alt="Triangular ruler rotated -30° about its pivot point" width="720">
+  <br>
+  <em>Figure 4: Triangular ruler rotated about its pivot point</em>
 </p>
 
 ## Features
