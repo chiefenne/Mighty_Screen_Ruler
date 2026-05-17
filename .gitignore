@@ -1,6 +1,13 @@
 .DS_Store
 .vscode/
 __pycache__/
+build/
+dist/
+release/macos/*.app/
+release/macos/*.dmg
+release/windows/*.exe
+release/linux/*.tar.gz
+release/linux/Mighty_Screen_Ruler
 *.py[cod]
 *.pyo
 *.pyd
