@@ -7,6 +7,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import QPainter, QColor, QFont
 from ruler_config import cfg
+from ruler_opacity import OPACITY_STEP, adjust_opacity, clamp_opacity
 
 class HelpPopup(QWidget):
     def __init__(self, parent=None):
@@ -180,8 +181,7 @@ class BaseRuler(QWidget):
 
         self.calibration_factor = cfg.data["calibration_factor"]
         self.use_metric = (cfg.data["units"] == "metric")
-        self.opacity = cfg.data["initial_opacity"]
-
+        self.opacity = clamp_opacity(cfg.data["initial_opacity"])
         self.setWindowOpacity(self.opacity)
 
         self.precise_pos = QPointF(-1000, -1000)
@@ -344,6 +344,10 @@ class BaseRuler(QWidget):
         self.precise_pos += QPointF(dx, dy)
         self.move(int(round(self.precise_pos.x())), int(round(self.precise_pos.y())))
         self.update()
+
+    def set_ruler_opacity(self, opacity):
+        self.opacity = clamp_opacity(opacity)
+        self.setWindowOpacity(self.opacity)
 
     def get_size_increment(self):
         increments = cfg.data.get("size_increment", {})
@@ -635,8 +639,6 @@ class BaseRuler(QWidget):
                 self.update()
 
         elif cfg.is_action("opacity_up", event):
-            self.opacity = min(1.0, self.opacity + 0.1)
-            self.setWindowOpacity(self.opacity)
+            self.set_ruler_opacity(adjust_opacity(self.opacity, OPACITY_STEP))
         elif cfg.is_action("opacity_down", event):
-            self.opacity = max(0.0, self.opacity - 0.1)
-            self.setWindowOpacity(self.opacity)
+            self.set_ruler_opacity(adjust_opacity(self.opacity, -OPACITY_STEP))
