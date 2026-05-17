@@ -23,7 +23,7 @@ Mighty Screen Ruler is a transparent on-screen ruler which stays on top of other
 </p>
 
 <p align="center">
-  <img src="images/Mighty_Screen_Ruler_triangular_rotated_-30.png" alt="Triangular ruler rotated -30° about its pivot point" width="720">
+  <img src="images/Mighty_Screen_Ruler_triangular_rotated_-30.png" alt="Triangular ruler rotated -30° about its pivot point" width="600">
   <br>
   <em>Figure 4: Triangular ruler rotated -30° about its pivot point</em>
 </p>
