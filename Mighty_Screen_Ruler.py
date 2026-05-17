@@ -61,7 +61,7 @@ def main():
     rect_ruler.center_on_screen()
 
     print("Mighty Ruler — FINAL")
-    print("Configuration loaded from ruler_config.json")
+    print(f"Configuration loaded from {cfg.file_path}")
     print("Press H for help")
 
     sys.exit(app.exec())
