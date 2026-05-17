@@ -276,12 +276,15 @@ class BaseRuler(QWidget):
         rot_y = vx * sin_a + vy * cos_a
         return QPointF(cx + rot_x, cy + rot_y)
 
-    def get_origin_point_window(self):
+    def get_point_screen_position(self, local_pt):
         fw, fh = self.get_bounding_box_float(self.rotation_angle)
-        origin_window = self.transform_point_local_to_window(
-            self.get_origin_point_local(), self.rotation_angle, fw, fh
+        window_pt = self.transform_point_local_to_window(
+            local_pt, self.rotation_angle, fw, fh
         )
-        return origin_window + (self.precise_pos - QPointF(self.pos()))
+        return self.precise_pos + window_pt
+
+    def get_pivot_point_screen(self):
+        return self.get_point_screen_position(self.get_pivot_point_local())
 
     def get_annotation_top_left(self, annotation_width, annotation_height):
         margin = 8
@@ -435,6 +438,7 @@ class BaseRuler(QWidget):
             new_pos = event.globalPosition().toPoint() - self.drag_position
             self.move(new_pos)
             self.precise_pos = QPointF(new_pos)
+            self.update()
 
     def mouseReleaseEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
@@ -551,10 +555,10 @@ class BaseRuler(QWidget):
         painter.restore()
 
     def draw_status_annotation(self, painter):
-        origin = self.get_origin_point_window()
+        pivot = self.get_pivot_point_screen()
         lines = [
             f"Angle: {self.rotation_angle:.1f} deg",
-            f"Origin win: {round(origin.x())}, {round(origin.y())} px",
+            f"Pivot: {round(pivot.x())}, {round(pivot.y())} px",
         ]
 
         painter.save()
